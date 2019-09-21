@@ -1,9 +1,12 @@
 <div class="row text-right">
     <div class="col-md-5 ">
-        <app-recipe-list></app-recipe-list>
+        <app-recipe-list (recipeItem)="selectedRecipeItem = $event"></app-recipe-list>
     </div>
     <div class="col-md-7 ">
         
-        <app-recipe-detail></app-recipe-detail>
+        <app-recipe-detail *ngIf="selectedRecipeItem; else pleaseSelectNews"></app-recipe-detail>
+        <ng-template #pleaseSelectNews>
+            <p>لطفا یک خبر را انتخاب کنید</p>
+        </ng-template>
     </div>
 </div>
