@@ -12,9 +12,14 @@ export class ShoppingListComponent implements OnInit {
     new Ingredient('بین ستاره ای', 5)
   ];
 
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addIngredient(ing: Ingredient) {
+    this.ingredients.push(ing);
   }
 
 }
