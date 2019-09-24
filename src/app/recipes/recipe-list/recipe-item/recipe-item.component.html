@@ -1,13 +1,13 @@
-<div  class="card-group" >
-    <div class="card" style="max-width: 340px;">
+<div  class="card-group " >
+    <div class="card " style="max-width: 340px;">
         <img src="{{ recipe.imagePath }}" class="card-img-top" alt="{{ recipe.name }}">
-        <div class="card-body">
+        <div class="card-body ">
             <h5 class="card-title">{{ recipe.name }}</h5>
             <p class="card-text">{{ recipe.description }}</p>
         </div>
-        <div class="card-footer">
+        <div class="card-footer"  routerLinkActive="active">
             <small class="text-muted">
-                <a href="#" (click)="onSelectRecipe()">ادامه خبر</a>
+                <a style="cursor: pointer" [routerLink]="[id]"  >ادامه خبر</a>
             </small>
         </div>
 

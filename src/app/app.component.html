@@ -1,8 +1,7 @@
 <app-header style="direction: rtl" (selectItem)="onSelectedItem($event)"></app-header>
 <!-- <app-header style="direction: rtl" (selectItem)="itemSelected = $event"></app-header> -->
   <div class="row m-3">
-    <div class="col-md-12 ">
-      <app-recipes style="direction: rtl" *ngIf="itemSelected === 'recipe' || itemSelected === 'all'"></app-recipes>
-      <app-shopping-list style="direction: rtl" *ngIf="itemSelected ==='shopping' || itemSelected === 'all'"></app-shopping-list>
+    <div class="col-md-12 " style="direction: rtl">
+      <router-outlet></router-outlet>
     </div>
   </div>

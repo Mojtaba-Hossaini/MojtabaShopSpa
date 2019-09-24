@@ -3,10 +3,6 @@
         <app-recipe-list></app-recipe-list>
     </div>
     <div class="col-md-7 ">
-        
-        <app-recipe-detail *ngIf="selectedRecipeItem; else pleaseSelectNews" [selectedRecipe]="selectedRecipeItem"></app-recipe-detail>
-        <ng-template #pleaseSelectNews>
-            <p>لطفا یک خبر را انتخاب کنید</p>
-        </ng-template>
+        <router-outlet></router-outlet>
     </div>
 </div>
