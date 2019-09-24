@@ -8,7 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   itemSelected = 'all';
 
-  onSelectedItem(selectedItemReceived: string) {
-    this.itemSelected = selectedItemReceived;
-  }
-}
+ }

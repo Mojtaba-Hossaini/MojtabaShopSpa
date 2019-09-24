@@ -1,11 +1,11 @@
 import { Ingredient } from './../shared/ingredient.model';
 import { Recipe } from './recipe.model';
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ShoppingListService } from '../shopping-list/shoppinglist.sevice';
 
 @Injectable()
 export class RecipeService {
-    recipeSelected = new EventEmitter<Recipe>();
+
    private recipes: Recipe[] = [
         new Recipe('کریستوفر نولان',
          'بهترین کارگردان حال حاضر سینما',
