@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-xl-12">
-        <form [formGroup]="recipeForm">
+        <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-xl-12">
-                    <button class="btn btn-success m-1">ذخیره</button>
-                    <button class="btn btn-danger">انصراف</button>
+                    <button class="btn btn-success m-1" [disabled]="!recipeForm.valid">ذخیره</button>
+                    <button class="btn btn-danger" (click)="onCancel()">انصراف</button>
                 </div>
             </div>
             <div class="row">
@@ -19,13 +19,13 @@
                 <div class="col-xl-12">
                     <div class="form-group">
                         <label for="imagePath">آدرس عکس</label>
-                        <input type="text" id="imagePath" class="form-control" formControlName="imagePath">
+                        <input type="text" id="imagePath" class="form-control" formControlName="imagePath" #imagePath>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xl-12">
-                    <img src="" class="img-fluid">
+                    <img [src]="imagePath.value" class="img-fluid">
                 </div>
             </div>
             <div class="row">
@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col-xl-12" formArrayName="ingredients">
                    
-                        <div class="row" *ngFor="let ing of recipeForm.get('ingredients').controls; let i = index" [formGroup]="i">
+                        <div class="row" *ngFor="let ing of recipeForm.get('ingredients').controls; let i = index" [formGroupName]="i" style="margin-top: 10px;">
                             <div class="col-xl-8">
                                 <input type="text" class="form-control" formControlName="name">
                             </div>
@@ -48,13 +48,13 @@
                                 <input type="number" class="form-control" formControlName="amount">
                             </div>
                             <div class="col-xl-2">
-                                <button class="btn btn-danger">X</button>
+                                <button type="button" class="btn btn-danger" (click)="onDeleteIngredient(i)">X</button>
                             </div>
                         </div>
                         <hr>
                    <div class="row">
                        <div class="col-xl-2">
-                           <button type="button" class="btn btn-success" (click)="addIngredients()">اضافه کردن لیست</button>
+                           <button type="button" class="btn btn-success" (click)="addIngredients()">افزودن لیست</button>
                        </div>
                    </div>
                 </div>
