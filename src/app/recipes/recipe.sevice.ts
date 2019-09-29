@@ -8,20 +8,21 @@ import { ShoppingListService } from '../shopping-list/shoppinglist.sevice';
 export class RecipeService {
     recipesChanged = new Subject<Recipe[]>();
 
-   private recipes: Recipe[] = [
-        new Recipe('کریستوفر نولان',
-         'بهترین کارگردان حال حاضر سینما',
-         'https://pmcvariety.files.wordpress.com/2018/05/nolan.jpg?w=1000',
-          [
-              new Ingredient('اینسپشن', 10),
-              new Ingredient('اینتراستالر', 9)
-          ]),
-        new Recipe('هیچ کاک', 'کصکش ترین کارگردان',
-         'https://ichef.bbci.co.uk/news/660/cpsprodpb/4DAA/production/_104228891_mediaitem104228889.jpg', [
-             new Ingredient('سرگیجه', 6),
-             new Ingredient('طناب', 4)
-         ])
-      ];
+//    private recipes: Recipe[] = [
+//         new Recipe('کریستوفر نولان',
+//          'بهترین کارگردان حال حاضر سینما',
+//          'https://pmcvariety.files.wordpress.com/2018/05/nolan.jpg?w=1000',
+//           [
+//               new Ingredient('اینسپشن', 10),
+//               new Ingredient('اینتراستالر', 9)
+//           ]),
+//         new Recipe('هیچ کاک', 'کصکش ترین کارگردان',
+//          'https://ichef.bbci.co.uk/news/660/cpsprodpb/4DAA/production/_104228891_mediaitem104228889.jpg', [
+//              new Ingredient('سرگیجه', 6),
+//              new Ingredient('طناب', 4)
+//          ])
+//       ];
+      private recipes: Recipe[] = [];
 
       constructor(private shopService: ShoppingListService) {}
 
@@ -45,6 +46,11 @@ export class RecipeService {
 
       deleteRecipe(id: number) {
           this.recipes.splice(id, 1);
+          this.recipesChanged.next(this.recipes.slice());
+      }
+
+      setRecipe(recipes: Recipe[]) {
+          this.recipes = recipes;
           this.recipesChanged.next(this.recipes.slice());
       }
 
