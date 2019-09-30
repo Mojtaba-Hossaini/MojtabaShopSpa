@@ -1,3 +1,4 @@
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthComponent } from './auth/auth.component';
 import { RecipesResolverService } from './recipes/recipes-resolver.service';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
     { path: ':id/edit', component: RecipeEditComponent, resolve: [ RecipesResolverService ] },
   ] },
   { path: 'shopping-list', component: ShoppingListComponent },
-  { path: 'auth', component: AuthComponent }
+  { path: 'auth', component: AuthComponent },
+  { path: 'kir', component: LoadingSpinnerComponent }
 ];
 
 @NgModule({
