@@ -1,0 +1,19 @@
+<div class="row justify-content-center text-right">
+    <div class="col-xl-12 col-md-6 ml-8 mr-8">
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+            <div class="form-group">
+                <label for="email">پست الکترونیکی</label>
+                <input type="email" id="email" class="form-control" ngModel name="email" required email>
+            </div>
+            <div class="form-group">
+                <label for="password">رمز عبور</label>
+                <input type="password" id="password" class="form-control" ngModel name="password" required minlength="6">
+            </div>
+            <div>
+                <button class="btn btn-primary m-1" (click)="osSwitch()" type="submit" [disabled]="!authForm.valid">{{ isLoginMode ? 'ورود' : 'ثبت نام'}}</button>
+            
+                <button class="btn btn-primary m-1" type="button">برای {{  isLoginMode ? 'ثبت نام' : 'ورود'}} کلیک کنید</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -8,7 +8,7 @@ import { map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DataStorageService {
-  serverUrl = 'https://mojtaba-spa.firebaseio.com/';
+  serverUrl = 'https://mojtaba-spa-bc155.firebaseio.com/';
 
   constructor(private http: HttpClient, private recipeService: RecipeService) { }
 
