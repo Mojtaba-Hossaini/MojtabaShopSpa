@@ -1,3 +1,4 @@
+import { AuthService } from './../auth/auth.service';
 import { DataStorageService } from './../shared/data-storage.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   
-  constructor(private dataService: DataStorageService) { }
+  constructor(private dataService: DataStorageService, private authService: AuthService) { }
 
   ngOnInit() {
   }

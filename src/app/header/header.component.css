@@ -1,5 +1,5 @@
 nav {
-    background-color: mediumspringgreen !important;
+    background-color: #4db6ac !important;
 }
 
 div.dropdown-menu {
@@ -7,5 +7,24 @@ div.dropdown-menu {
 }
 
 a.dropdown-item:hover {
-    background-color: lightseagreen;
+    background-color: rgb(163, 248, 220);
+}
+a.navbar-brand {
+    font-weight: bold;
+    color: #004d40;
+    text-shadow: -1px 0 #b2dfdb, 0 1px #b2dfdb, 1px 0 #b2dfdb, 0 -1px #b2dfdb;
+}
+a.nav-link {
+    color: #e0f2f1;
+}
+a.active {
+    color:  #fc3b9c !important;
+}
+nav.navbar {
+    color: #000000 ;
+}
+
+button.btn {
+    background-color: #26a69a;
+    border: solid 1px #80cbc4 !important;
 }

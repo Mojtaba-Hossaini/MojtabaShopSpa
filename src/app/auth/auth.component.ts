@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthResponseData } from './authResponseData.model';
 import { AuthService } from './auth.service';
 import { NgForm } from '@angular/forms';
@@ -14,7 +15,7 @@ export class AuthComponent implements OnInit {
   isLoadning = false;
   error: string = null;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -38,6 +39,7 @@ export class AuthComponent implements OnInit {
     authObs.subscribe( responseData => {
       console.log(responseData);
       this.isLoadning = false;
+      this.router.navigate(['/recipes']);
     }, errorMessage => {
       console.log(errorMessage);
       this.error = errorMessage;
