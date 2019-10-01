@@ -16,9 +16,9 @@
                 <input type="password" id="password" class="form-control" ngModel name="password" required minlength="6">
             </div>
             <div>
-                <button class="btn btn-primary m-1" (click)="osSwitch()" type="submit" [disabled]="!authForm.valid">{{ isLoginMode ? 'ورود' : 'ثبت نام'}}</button>
+                <button class="btn btn-primary m-1"  type="submit" [disabled]="!authForm.valid">{{ isLoginMode ? 'ورود' : 'ثبت نام'}}</button>
             
-                <button class="btn btn-primary m-1" type="button">برای {{  isLoginMode ? 'ثبت نام' : 'ورود'}} کلیک کنید</button>
+                <button class="btn btn-primary m-1" type="button" (click)="osSwitch()">برای {{  isLoginMode ? 'ثبت نام' : 'ورود'}} کلیک کنید</button>
             </div>
         </form>
     </div>
