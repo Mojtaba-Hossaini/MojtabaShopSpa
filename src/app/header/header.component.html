@@ -8,13 +8,13 @@
         <li class="nav-item active">
           <a class="nav-link" >صفحه اصلی <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/recipes']" routerLinkActive="active"  >محصولات</a>
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <a class="nav-link" [routerLink]="['/recipes']" routerLinkActive="active" >محصولات</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/shopping-list']" routerLinkActive="active" >سبد خرید</a>
         </li>
-        <li class="nav-item dropdown show" >
+        <li class="nav-item dropdown show" *ngIf="isAuthenticated" >
           <a class="nav-link dropdown-toggle" style="cursor: pointer" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             ارتباط با سرور
           </a>
@@ -27,8 +27,8 @@
       </ul>
     </div>
     <div class="float-left">
-      <button class="btn m-1" [routerLink]="['/auth']" >ورود یا ثبت نام</button>
-      <button class="btn m-1" >خروج</button>
+      <button class="btn m-1" [routerLink]="['/auth']" *ngIf="!isAuthenticated">ورود یا ثبت نام</button>
+      <button class="btn m-1" *ngIf="isAuthenticated" >خروج</button>
       
     </div>
   </nav>
