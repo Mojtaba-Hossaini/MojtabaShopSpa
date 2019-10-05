@@ -28,7 +28,7 @@
     </div>
     <div class="float-left">
       <button class="btn m-1" [routerLink]="['/auth']" *ngIf="!isAuthenticated">ورود یا ثبت نام</button>
-      <button class="btn m-1" *ngIf="isAuthenticated" >خروج</button>
+      <button class="btn m-1" *ngIf="isAuthenticated" (click)="logOut()">خروج</button>
       
     </div>
   </nav>
