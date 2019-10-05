@@ -1,8 +1,9 @@
 <div class="row justify-content-center text-right">
-    <div class="col-xl-12 col-md-6 ml-8 mr-8">
+    <div class="col-md-4 ml-8 mr-8">
         <div class="danger alert-danger" *ngIf="error">
             <p>{{ error}}</p>
         </div>
+        <!-- <app-alert [message]="error" *ngIf="error"></app-alert>> -->
         <div *ngIf="isLoadning" style="text-align:center;">
             <app-loading-spinner></app-loading-spinner>
         </div>
